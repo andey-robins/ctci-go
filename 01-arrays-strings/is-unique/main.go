@@ -5,6 +5,7 @@ package main
 
 import (
 	"fmt"
+	"sort"
 	"strings"
 )
 
@@ -14,6 +15,8 @@ func main() {
 	fmt.Println(isUnique("abcdefg"))
 	fmt.Println("String: 'aaaa'")
 	fmt.Println(isUnique("aaaa"))
+	fmt.Println("String: 'abab'")
+	fmt.Println(isUnique("abab"))
 	fmt.Println("String: ''")
 	fmt.Println(isUnique(""))
 }
@@ -21,6 +24,7 @@ func main() {
 func isUnique(s string) bool {
 
 	splitS := strings.Split(s, "")
+	sort.Strings(splitS)
 
 	for i := 0; i < len(s)-1; i++ {
 		if splitS[i] == splitS[i+1] {
