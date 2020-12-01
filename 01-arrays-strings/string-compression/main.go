@@ -26,7 +26,7 @@ func stringCompression(s string) string {
 	last := s[0]
 	count := 0
 
-	for i, _ := range s {
+	for i := range s {
 		if s[i] == last {
 			count++
 		} else {
