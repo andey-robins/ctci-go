@@ -26,8 +26,8 @@ func isUnique(s string) bool {
 	splitS := strings.Split(s, "")
 	sort.Strings(splitS)
 
-	for i := 0; i < len(s)-1; i++ {
-		if splitS[i] == splitS[i+1] {
+	for i, c := range splitS {
+		if i < len(s)-1 && c == splitS[i+1] {
 			return false
 		}
 	}
